@@ -1,0 +1,10 @@
+<section id="selection">
+  <h1>Please select your drink type</h1>
+  <ul>
+    <li *ngFor="let product of products">
+      <button (click)="selectDrink(product)" routerLink="/personalization/{{product.id}}">
+        <img src={{product.icon.fields.file.url}}>
+      </button>
+    </li>
+  </ul>
+</section>

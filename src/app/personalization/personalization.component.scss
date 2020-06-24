@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+:host{
+  #personalization {
+    background-color: $app-background;
+    height: 100vh;
+    header{
+      background-image: url('/assets/table.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 769px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      .selected-drink{
+        position: absolute;
+        bottom: 0;
+        background-size: contain;
+        width: 15%;
+        height: 390px;
+        background-repeat: no-repeat;
+  
+      }
+    }
+  }
+}

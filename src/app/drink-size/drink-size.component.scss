@@ -1,0 +1,28 @@
+@import 'variables.scss';
+:host{
+  padding-top: 20px;
+  text-align: center;
+  h2{
+    font-size: 43px;
+    font-weight: bold;
+  }
+
+  ul{
+    list-style-type: none;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    li{
+      border:1px solid $white;
+      padding:1em;
+      color: $white;
+      font-size: 21px;
+      font-weight: bold;
+      margin-right: 5px;
+      span{
+        padding-left: 35px;
+        color: $orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import 'variables.scss';
+:host{
+  #home{
+    padding-top: 250px;
+    background-color: $app-background;
+    min-width: $app-width;
+    width: $app-width;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    app-button-circle{
+      position: absolute;
+      bottom:25px;
+    }
+  }
+}
