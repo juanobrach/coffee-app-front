@@ -1,11 +1,9 @@
 @import 'variables.scss';
 :host{
   #home{
-    padding-top: 250px;
     background-color: $app-background;
-    min-width: $app-width;
-    width: $app-width;
-    height: 100%;
+    width: 100%;
+    height: 80vh;
     display: flex;
     justify-content: center;
     app-button-circle{
