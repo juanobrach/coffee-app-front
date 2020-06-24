@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { Product } from '../models/Product';
+import { Order } from '../models/Order';
 
-export const addProduct =  createAction('[Counter Component] Add Product', props<{ product: Product }>());
-export const decrement = createAction('[Counter Component] Decrement');
-export const reset = createAction('[Counter Component] Reset');
+export const addProduct =  createAction('[Selection Component] Add Product', props<{ product: Product }>());
+export const setDrinkSize = createAction('[DrinkSize Component] Select Size', props<{ size: Order }>());

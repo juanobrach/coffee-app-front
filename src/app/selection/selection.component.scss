@@ -17,9 +17,9 @@
     ul{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 50px;
       list-style-type: none;
-      padding:0;
-
+      padding:1em;
     }
   }
 }
