@@ -14,4 +14,8 @@ export class ProductsService {
   getProducts(){
     return this.httpClient.get( `${this.SERVER_URL}/products` );
   }
+
+  getIngredients(){
+    return this.httpClient.get( `${this.SERVER_URL}/products/extras` );
+  }
 }

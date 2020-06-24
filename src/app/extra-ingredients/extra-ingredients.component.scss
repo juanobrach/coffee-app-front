@@ -1,0 +1,38 @@
+@import 'variables.scss';
+
+:host{
+  text-align: center;
+  #ingredients{
+    ul{
+      display: grid;
+      list-style-type: none;
+      padding:0;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 50%;
+      margin: auto;
+      li{
+        display: inline-flex;
+        flex-flow: column;
+        align-self: center;
+        background: $brown-middle;
+        height: 100%;
+        width: 90%;
+        color:$white;
+        div{
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-content: flex-end;
+          height: 100%;
+          img{
+            display: block;
+          }
+          p{
+            width: 100%;
+          }
+
+        }
+      }
+    }
+  }
+}

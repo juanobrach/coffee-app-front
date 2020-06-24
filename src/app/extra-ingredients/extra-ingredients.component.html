@@ -1,1 +1,11 @@
-<p>extra-ingredients works!</p>
+<section id="ingredients">
+  <h1>Customize your drink</h1>
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      <div>
+        <img src={{ingredient.icon.fields.file.url}}>
+        <p>{{ingredient.name}} ${{ingredient.price}}</p>
+      </div>
+    </li>
+  </ul>
+</section>

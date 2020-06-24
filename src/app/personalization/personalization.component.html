@@ -5,3 +5,7 @@
   <app-drink-size regularPrice="{{regularPrice}}"  ></app-drink-size>
   <app-extra-ingredients *ngIf="drinkSize"></app-extra-ingredients>
 </section>
+<section id="total">
+  <p>Total:  <span>${{totalPrice}}</span> </p>
+  <button>PAY NOW</button>
+</section>
