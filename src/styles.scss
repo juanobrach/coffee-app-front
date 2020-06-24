@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import 'variables.scss';
+
+// This demo app is for tablet resolution only
+html, body{
+  background-color: $black;
+  max-width: 1024px;
+  margin: auto;
+}
+
+h1,h2,h3,h4,h5,h6, p{
+  color: $yellow
+}
