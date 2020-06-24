@@ -13,12 +13,12 @@
     display: flex;
     justify-content: center;
     li{
-      border:1px solid $white;
       padding:1em;
       color: $white;
       font-size: 21px;
       font-weight: bold;
       margin-right: 5px;
+      background: $brown-middle;
       span{
         padding-left: 35px;
         color: $orange;
@@ -26,6 +26,7 @@
 
       &.selected{
         background-color: $yellow-low;
+        border:1px solid $white;
       }
     }
   }

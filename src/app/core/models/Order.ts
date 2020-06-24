@@ -3,6 +3,6 @@ import {Product} from './Product';
 export interface Order {
   product: Product;
   size: string;
-  extras: [];
+  extras: string[];
   total: number;
 }

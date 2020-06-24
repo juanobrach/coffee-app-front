@@ -1,7 +1,7 @@
 <section id="ingredients">
-  <h1>Customize your drink</h1>
+  <h3>Customize your drink</h3>
   <ul>
-    <li *ngFor="let ingredient of ingredients">
+    <li [ngClass]="{'selected': ingredientsSelected.includes(ingredient.id) }" (click)="setIngredientSelected(ingredient)" *ngFor="let ingredient of ingredients">
       <div>
         <img src={{ingredient.icon.fields.file.url}}>
         <p>{{ingredient.name}} ${{ingredient.price}}</p>
