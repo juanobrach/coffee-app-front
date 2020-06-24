@@ -2,15 +2,9 @@ import { createReducer, on, createSelector } from '@ngrx/store';
 
 import { addProduct, setDrinkSize } from './order.actions';
 import { Product } from '../models/Product';
+import { Order } from '../models/Order';
 
-export interface State {
-  product: Product;
-  size: string;
-  extras: [];
-  total: number;
-}
-
-export const initialState: State = {
+export const initialState: Order = {
   product: {} as Product,
   size: '',
   extras: [],
@@ -19,7 +13,7 @@ export const initialState: State = {
 
 const _orderReducer = createReducer(initialState,
   on( addProduct, (state, {product}) => ({ ...state, product: { ...product}})),
-  on( setDrinkSize, (state, {size}) => ({ ...state, ...size }))
+  on( setDrinkSize, (state, {size} ) => ({ ...state,  size }))
 );
 
 export function orderReducer(state, action) {

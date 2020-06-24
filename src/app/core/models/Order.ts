@@ -1,5 +1,8 @@
+import {Product} from './Product';
+
 export interface Order {
-  product?: number;
-  size?: string;
-  extras?: [];
+  product: Product;
+  size: string;
+  extras: [];
+  total: number;
 }

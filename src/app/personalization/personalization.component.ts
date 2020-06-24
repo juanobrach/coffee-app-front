@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { addProduct, State  } from '../core/store';
+import { addProduct  } from '../core/store';
 import { Product} from '../core/models/Product';
+import { Order} from '../core/models/Order';
+
+
 
 @Component({
   selector: 'app-personalization',
@@ -11,12 +14,14 @@ import { Product} from '../core/models/Product';
 })
 export class PersonalizationComponent implements OnInit {
   product$: Observable<Product>;
+  order$: Observable<any>;
+
   icon;
   regularPrice;
 
-  constructor(private store: Store<{ order: State }>) { 
+  constructor(private store: Store<{ order: Order }>) { 
     this.product$ = store.select( state => state.order.product);
-    console.log('this.product$:', this.product$)
+    this.order$ = store.select( state => state.order );
   }
 
   ngOnInit(): void {
@@ -25,10 +30,12 @@ export class PersonalizationComponent implements OnInit {
       console.log('product:', product.price)
       this.regularPrice = product.price;
     })
-  }
 
-  addProduct() {
-    // this.store.dispatch(addProduct());
+    this.order$.subscribe( order => {
+      console.log('order:', order)
+    })
+
+
   }
 
 }
