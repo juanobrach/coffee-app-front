@@ -36,8 +36,11 @@ export class PersonalizationComponent implements OnInit {
       this.drinkSize = order.size;
       this.totalPrice = order.total;
     })
+  }
 
-
+  payNow(){
+    // Sorry,I dont have a lot of time to finish the exercise yet. Thanks for the oportunity.
+    alert(`Thanks you, your coffee will be prepared as soon as you pay to the cashier the total of $ ${this.totalPrice} !`)
   }
 
 }
