@@ -1,9 +1,9 @@
 <h2>Select your drink size</h2>
 <ul>
-  <li (click)="selectDrinkSize('regular')">
+  <li [ngClass]="{'selected': drinkSize === 'regular'}" (click)="selectDrinkSize('regular')">
     Regular <span>${{regularPrice}}</span>
   </li>
-  <li (click)="selectDrinkSize('large')">
+  <li [ngClass]="{'selected': drinkSize === 'large'}"  (click)="selectDrinkSize('large')">
     Large <span>${{largePrice}}</span>
   </li>
 </ul>

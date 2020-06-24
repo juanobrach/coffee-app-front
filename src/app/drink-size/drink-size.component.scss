@@ -23,6 +23,10 @@
         padding-left: 35px;
         color: $orange;
       }
+
+      &.selected{
+        background-color: $yellow-low;
+      }
     }
   }
 }
