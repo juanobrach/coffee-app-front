@@ -18,6 +18,7 @@ export class PersonalizationComponent implements OnInit {
 
   icon;
   regularPrice;
+  drinkSize;
 
   constructor(private store: Store<{ order: Order }>) { 
     this.product$ = store.select( state => state.order.product);
@@ -32,7 +33,7 @@ export class PersonalizationComponent implements OnInit {
     })
 
     this.order$.subscribe( order => {
-      console.log('order:', order)
+      this.drinkSize = order.size;
     })
 
 

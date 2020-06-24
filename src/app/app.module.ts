@@ -9,6 +9,7 @@ import { SelectionComponent } from './selection/selection.component';
 import { DrinkSizeComponent } from './drink-size/drink-size.component';
 import { CoreModule } from './core/core.module';
 import { PersonalizationComponent } from './personalization/personalization.component';
+import { ExtraIngredientsComponent } from './extra-ingredients/extra-ingredients.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PersonalizationComponent } from './personalization/personalization.comp
     HomeComponent,
     SelectionComponent,
     DrinkSizeComponent,
-    PersonalizationComponent
+    PersonalizationComponent,
+    ExtraIngredientsComponent
   ],
   imports: [
     BrowserModule,
