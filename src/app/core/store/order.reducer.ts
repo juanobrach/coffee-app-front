@@ -15,10 +15,15 @@ export const initialState: Order = {
 const _orderReducer = createReducer(initialState,
   on( addProduct, (state, {product}) => ({ ...state, product: { ...product}, total: product.price })),
   on( setDrinkSize, (state, {size} ) => {
+
     // Change the total of the order based on the selected size of the drink
-    const productPrice = state.product.price;
-    const total = ( size === 'regular' ? productPrice : productPrice * 2 );
-    return({ ...state,  size, total })
+    // Be carefoul with the new order total since it is calculated based on the extra ingredients
+    const productRegularPrice = state.product.price;
+    const newProductPrice =  ( size === 'regular' ? productRegularPrice : productRegularPrice * 2 );
+    const oldProductPrice = (state.size === 'regular' ? productRegularPrice : productRegularPrice * 2 );
+    const total = (state.total - oldProductPrice ) + newProductPrice;
+
+    return({ ...state,  size, total });
   }),
   on( setIngredientSelected, ( state, {ingredient} ) => {
 
