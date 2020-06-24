@@ -3,7 +3,6 @@ import { createReducer, on, createSelector } from '@ngrx/store';
 import { addProduct, setDrinkSize, setIngredientSelected } from './order.actions';
 import { Product } from '../models/Product';
 import { Order } from '../models/Order';
-import { state } from '@angular/animations';
 
 export const initialState: Order = {
   product: {} as Product,
@@ -39,10 +38,7 @@ const _orderReducer = createReducer(initialState,
       const updatedIngredientsSelected = [ ...state.extras, ingredient.id];
       return({ ...state, total: state.total + ingredient.price , extras: updatedIngredientsSelected })
     }
-  }),
-
-
-  
+  }),  
 );
 
 export function orderReducer(state, action) {

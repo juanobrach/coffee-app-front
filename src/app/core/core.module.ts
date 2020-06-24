@@ -7,7 +7,8 @@ import {
 } from './services';
 
 import {
-  orderReducer
+  orderReducer,
+  appDataReducer
 } from './store';
 
 
@@ -16,7 +17,7 @@ import {
   imports: [
     CommonModule,
     HttpClientModule,
-    StoreModule.forRoot({ order: orderReducer })
+    StoreModule.forRoot({ order: orderReducer, appData: appDataReducer })
   ],
   providers: [
     ProductsService

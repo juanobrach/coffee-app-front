@@ -20,6 +20,9 @@
       row-gap: 50px;
       list-style-type: none;
       padding:1em;
+      li{
+        cursor: pointer;
+      }
     }
   }
 }

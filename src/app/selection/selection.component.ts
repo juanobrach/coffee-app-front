@@ -6,6 +6,8 @@ import { Order } from '../core/models/Order';
 
 import { Store } from '@ngrx/store';
 import { addProduct  } from '../core/store';
+import { Observable } from 'rxjs';
+import { AppData } from '../core/models/AppData';
 
 @Component({
   selector: 'app-selection',
@@ -13,15 +15,23 @@ import { addProduct  } from '../core/store';
   styleUrls: ['./selection.component.scss'],
 })
 export class SelectionComponent implements OnInit {
+  appData$: Observable<AppData>
   products: Product[] = [];
 
-  constructor(private service: ProductsService, private store: Store<{ order: Order }>) {
-      service.getProducts().subscribe( ( data: Product[] ) => {
-          this.products = data;
-      });
+  constructor( 
+    private service: ProductsService,
+    private store: Store<{ order: Order }>,
+    private appData: Store<{ appData: AppData}>
+    ) {
+      this.appData$ = appData.select( state => state.appData );
    }
 
-  ngOnInit(): void {
+   
+   ngOnInit(): void {
+    this.appData$.subscribe( appData => {
+      console.log('appData:', appData)
+      this.products = appData.products;
+    })
   }
 
   selectDrink(drink) {

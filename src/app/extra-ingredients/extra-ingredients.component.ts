@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { setIngredientSelected  } from '../core/store';
 import { Order } from './../core/models/Order';
 import { Observable } from 'rxjs';
+import { AppData } from '../core/models/AppData';
 
 @Component({
   selector: 'app-extra-ingredients',
@@ -13,15 +14,19 @@ import { Observable } from 'rxjs';
 })
 export class ExtraIngredientsComponent implements OnInit {
   order$: Observable<Order>;
+  appData$: Observable<AppData>;
+
   ingredients: Product[] = [];
   ingredientsSelected: string[] = [];
 
-  constructor( private service: ProductsService, private store: Store<{ order: Order }> ) {
+  constructor( 
+    private service: ProductsService,
+    private store: Store<{ order: Order }>,
+    private appData: Store<{ appData: AppData }>
+    ) {
     this.order$ = store.select( state => state.order );
-    service.getIngredients().subscribe( ( data: Product[] ) => {
-      console.log('data:', data)
-      this.ingredients = data;
-    });
+    this.appData$ = appData.select( state => state.appData );
+
    }
 
   setIngredientSelected(ingredient){
@@ -32,6 +37,11 @@ export class ExtraIngredientsComponent implements OnInit {
     this.order$.subscribe( order => {
       this.ingredientsSelected = order.extras;
       console.log('this.ingredientsSelected:', this.ingredientsSelected)
+    })
+
+    this.appData$.subscribe( appData => {
+      console.log('appData:', appData)
+      this.ingredients = appData.ingredients;
     })
   }
 
