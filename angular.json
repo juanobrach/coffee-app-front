@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "coffeeApp"
+    }
+  },
+  "defaultProject": "coffeeApp",
+  "cli": {
+    "analytics": false
+  }
 }
