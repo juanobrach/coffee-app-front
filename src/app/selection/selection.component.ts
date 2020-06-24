@@ -25,7 +25,6 @@ export class SelectionComponent implements OnInit {
   }
 
   selectDrink(drink) {
-    console.log('drink:', drink)
     this.store.dispatch(addProduct({ product: drink}));
   }
 

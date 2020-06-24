@@ -23,4 +23,27 @@
       }
     }
   }
+
+  #total{
+    text-align: center;
+    margin-bottom: 1em;
+    p{
+      font-size: 40px;
+      font-weight: bold;
+      color: $white;
+      span{
+        color: $yellow;
+      }
+    }
+    button{
+      font-size: 32px;
+      border-radius: 22px;
+      background-color: $yellow;
+      color: black;
+      text-transform: uppercase;
+      font-weight:bold;
+      width: 45%;
+      padding: 1em;
+    }
+  }
 }
